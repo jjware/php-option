@@ -23,12 +23,12 @@ class Some extends Option
         return new Some(call_user_func($f, $this->value));
     }
 
-    public function getOrElseGet(callable $f): mixed
+    public function getOrElseGet(callable $f)
     {
         return $this->value;
     }
 
-    public function getOrElse(mixed $default): mixed
+    public function getOrElse($default)
     {
         return $this->value;
     }
@@ -38,12 +38,12 @@ class Some extends Option
         call_user_func($f, $this->value);
     }
 
-    public function isSome(): boolean
+    public function isSome(): bool
     {
         return true;
     }
 
-    public function isNone(): boolean
+    public function isNone(): bool
     {
         return false;
     }

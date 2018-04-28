@@ -13,12 +13,12 @@ class None extends Option
         return $this;
     }
 
-    public function getOrElseGet(callable $f): mixed
+    public function getOrElseGet(callable $f)
     {
         return call_user_func($f);
     }
 
-    public function getOrElse(mixed $default): mixed
+    public function getOrElse($default)
     {
         return $default;
     }
@@ -28,12 +28,12 @@ class None extends Option
         // do nothing
     }
 
-    public function isSome(): boolean
+    public function isSome(): bool
     {
         return false;
     }
 
-    public function isNone(): boolean
+    public function isNone(): bool
     {
         return true;
     }

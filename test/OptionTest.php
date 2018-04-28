@@ -1,10 +1,13 @@
 <?php
+declare(strict_types=1);
 
-use JJWare\Util\Option;
-use JJWare\Util\Some;
-use JJWare\Util\None;
+use JJWare\Utils\Option\Option;
+use JJWare\Utils\Option\Some;
+use JJWare\Utils\Option\None;
 
-class OptionTest extends PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class OptionTest extends TestCase
 {
     public function testNone()
     {
@@ -101,8 +104,8 @@ class OptionTest extends PHPUnit_Framework_TestCase
     {
         $value = Option::some(1)->flatMap(function ($x) {
             return Option::some($x + 1);
-        })->get();
-        $this->assertEquals($value, 2);
+        });
+        $this->assertEquals($value, Option::some(2));
     }
 
     public function testFlatMapWhenNone()

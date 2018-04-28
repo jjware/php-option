@@ -6,11 +6,11 @@ abstract class Option
 {
     private static $n = null;
     public abstract function map(callable $f): Option;
-    public abstract function getOrElseGet(callable $f): mixed;
-    public abstract function getOrElse(mixed $default): mixed;
+    public abstract function getOrElseGet(callable $f);
+    public abstract function getOrElse($default);
     public abstract function forEach(callable $f): void;
-    public abstract function isSome(): boolean;
-    public abstract function isNone(): boolean;
+    public abstract function isSome(): bool;
+    public abstract function isNone(): bool;
 
     public static function none(): Option
     {
@@ -20,7 +20,7 @@ abstract class Option
         return self::$n;
     }
 
-    public static function some(mixed $value): Option
+    public static function some($value): Option
     {
         return new Some($value);
     }
@@ -56,7 +56,7 @@ abstract class Option
                 : self::none();
         });
     }
-    
+
     public function orElse(callable $f): Option
     {
         return $this->map('Option::some')->getOrElseGet($f);

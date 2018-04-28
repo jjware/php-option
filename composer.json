@@ -9,10 +9,10 @@
       "email": "joshua.jones.software@gmail.com"
     }],
     "autoload": {
-      "psr-4": {"JJWare\\Util\\Option\\": "src"}
+      "psr-4": {"JJWare\\Utils\\Option\\": "src"}
     },
     "require": {
-      "php": ">=7.0.0"
+      "php": ">=7.1.0"
     },
     "require-dev": {
       "phpUnit/phpUnit": "^7.1"
