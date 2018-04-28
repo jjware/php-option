@@ -139,6 +139,24 @@ class OptionTest extends TestCase
         });
         $this->assertEquals($value, Option::none());
     }
+
+    public function testForEachWhenSome()
+    {
+        $mutable = 3;
+        Option::some(1)->forEach(function ($i) use (&$mutable) {
+            $mutable = $i;
+        });
+        $this->assertEquals($mutable, 1);
+    }
+
+    public function testForEachWhenNone()
+    {
+        $mutable = 3;
+        Option::none()->forEach(function ($i) use (&$mutable) {
+            $mutable = $i;
+        });
+        $this->assertEquals($mutable, 3);
+    }
 }
 
 class Mock
