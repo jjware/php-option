@@ -1,4 +1,4 @@
-# option
+# Option
 Option sum type for PHP
 
 ## Getting Started
