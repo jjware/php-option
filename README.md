@@ -1,4 +1,6 @@
 # Option
+![Build Status](https://travis-ci.org/jjware/php-option.svg?branch=master)
+
 Option sum type for PHP
 
 ## Getting Started
