@@ -23,6 +23,11 @@ class None extends Option
         return $default;
     }
 
+    public function getOrThrow(callable $f)
+    {
+        throw call_user_func($f);
+    }
+
     public function forEach(callable $f): void
     {
         // do nothing

@@ -33,6 +33,11 @@ class Some extends Option
         return $this->value;
     }
 
+    public function getOrThrow(callable $f)
+    {
+        return $this->value;
+    }
+
     public function forEach(callable $f): void
     {
         call_user_func($f, $this->value);

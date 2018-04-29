@@ -8,6 +8,7 @@ abstract class Option
     public abstract function map(callable $f): Option;
     public abstract function getOrElseGet(callable $f);
     public abstract function getOrElse($default);
+    public abstract function getOrThrow(callable $f);
     public abstract function forEach(callable $f): void;
     public abstract function isSome(): bool;
     public abstract function isNone(): bool;

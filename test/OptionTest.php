@@ -72,6 +72,24 @@ class OptionTest extends TestCase
         $this->assertEquals($value, 3);
     }
 
+    public function testGetOrThrowWhenSome()
+    {
+        $value = Option::some(1)->getOrThrow(function () {
+            return new \InvalidArgumentException("invalid");
+        });
+        $this->assertEquals($value, 1);
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testGetOrThrowWhenNone()
+    {
+        $value = Option::none()->getOrThrow(function () {
+            return new \InvalidArgumentException("invalid");
+        });
+    }
+
     public function testIsSomeWhenSome()
     {
         $o = Option::some(1);
