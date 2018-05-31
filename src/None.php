@@ -28,7 +28,7 @@ class None extends Option
         throw call_user_func($f);
     }
 
-    public function forEach(callable $f): void
+    public function forEach(callable $f)
     {
         // do nothing
     }

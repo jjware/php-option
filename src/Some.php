@@ -38,7 +38,7 @@ class Some extends Option
         return $this->value;
     }
 
-    public function forEach(callable $f): void
+    public function forEach(callable $f)
     {
         call_user_func($f, $this->value);
     }
